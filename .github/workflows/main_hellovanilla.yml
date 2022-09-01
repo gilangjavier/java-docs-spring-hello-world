@@ -45,7 +45,7 @@ jobs:
       - name: Upload Artifact to Nexus
         uses: sonatype-nexus-community/nexus-repo-github-action@master
         with:
-          serverUrl: http://20.169.104.139:8081/repository/
+          serverUrl: http://20.169.104.139:8081
           username: ${{ secrets.NEXUS_USERNAME }}
           password: ${{ secrets.NEXUS_PASSWORD }}
           format: maven2
