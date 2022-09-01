@@ -40,7 +40,7 @@ jobs:
           repository: javarest-repo
           coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=1.0.0
           assets: extension=jar
-          filename: '**/*.jar'
+          filename: ./target/app-1.0.0.jar
 
 
   deploy:
