@@ -42,7 +42,7 @@ jobs:
           username: ${{ secrets.USERNAME_NEXUS }}
           password: ${{ secrets.PASSWORD_NEXUS }}
           format: maven2
-          repository: javarest
+          repository: javarest-repo
           coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=1.0.0
           assets: extension=jar
           filename: '${{ github.workspace }}/target/*.jar'
