@@ -29,6 +29,24 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
+  
+  upload:
+    runs-on: ubuntu-latest
+    environment:
+      host: http://20.169.104.139:8081
+      
+    steps:
+      - uses: sonatype-nexus-community/nexus-repo-github-action@master
+        name: Upload Artifact to Nexus
+        with:
+          serverUrl: host
+          username: ${{ secrets.USERNAME_NEXUS }}
+          password: ${{ secrets.PASSWORD_NEXUS }}
+          format: maven2
+          repository: javarest
+          coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=1.0.0
+          assets: extension=jar
+          filename: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
