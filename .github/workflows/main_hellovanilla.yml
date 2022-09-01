@@ -39,8 +39,9 @@ jobs:
         name: Upload Artifact to Nexus
         with:
           serverUrl: http://20.169.104.139:8081/repository/
-          username: ${{ secrets.USERNAME_NEXUS }}
-          password: ${{ secrets.PASSWORD_NEXUS }}
+          username: ${{ secrets.NEXUS_USERNAME }}
+          password: ${{ secrets.NEXUS_PASSWORD }}
+          format: maven2
           repository: javarest-repo
           coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=1.0.0
           assets: extension=jar
