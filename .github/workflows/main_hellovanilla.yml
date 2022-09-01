@@ -52,7 +52,7 @@ jobs:
           repository: javarest-repo
           coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=1.0.0
           assets: extension=jar
-          filename: '*.jar"
+          filename: '*.jar'
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
