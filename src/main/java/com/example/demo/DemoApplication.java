@@ -15,6 +15,6 @@ public class DemoApplication {
 
 	@RequestMapping("/")
 	String sayHello() {
-		return "Hello World Gill Vision! Tes CICD in Azure Web Apps";
+		return "Hello World Gill Vision CICD in Azure Web Apps";
 	}
 }
