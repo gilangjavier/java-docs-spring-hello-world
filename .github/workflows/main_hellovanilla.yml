@@ -41,7 +41,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: java-app
-                
+        
+        
       - name: Upload Artifact to Nexus
         uses: sonatype-nexus-community/nexus-repo-github-action@master
         with:
@@ -50,7 +51,7 @@ jobs:
           password: ${{ secrets.NEXUS_PASSWORD }}
           format: maven2
           repository: javarest-repo
-          coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=${{ github.run_id }}
+          coordinates: groupId=com.example artifactId=java-docs-spring-hello-world version=V1-${{ github.run_id }}
           assets: extension=jar
           filename: '*.jar'
 
